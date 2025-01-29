@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visit GitHub Files</title>
+    <title>Redirect to Links</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -30,33 +30,28 @@
 </head>
 <body>
 
-    <h1>Visit GitHub Files</h1>
+    <h1>Redirect to Links</h1>
 
-    <!-- Buttons that redirect to GitHub file links -->
-    <button onclick="goToLink('file1')">Go to File 1</button>
-    <button onclick="goToLink('file2')">Go to File 2</button>
-    <button onclick="goToLink('file3')">Go to File 3</button>
-    <button onclick="goToLink('file4')">Go to File 4</button>
-    <button onclick="goToLink('file5')">Go to File 5</button>
+    <!-- Buttons that redirect to specified links -->
+    <button onclick="goToLink('link1')">Go to Link 1</button>
+    <button onclick="goToLink('link2')">Go to Link 2</button>
+    <button onclick="goToLink('link3')">Go to Link 3</button>
+    <button onclick="goToLink('link4')">Go to Link 4</button>
+    <button onclick="goToLink('link5')">Go to Link 5</button>
 
     <script>
-        function goToLink(file) {
-            // GitHub raw file URL pattern
-            const githubBaseURL = 'https://github.com/your-username/your-repository/blob/main/';
-
-            // Replace these filenames with your actual file names in the repo
-            const files = {
-                'file1': 'path/to/your/file1.ext',
-                'file2': 'path/to/your/file2.ext',
-                'file3': 'path/to/your/file3.ext',
-                'file4': 'path/to/your/file4.ext',
-                'file5': 'path/to/your/file5.ext'
+        function goToLink(link) {
+            // Define the links for each button
+            const links = {
+                'link1': 'https://www.example.com',  // Replace with actual URL
+                'link2': 'https://www.example2.com', // Replace with actual URL
+                'link3': 'https://www.example3.com', // Replace with actual URL
+                'link4': 'https://www.example4.com', // Replace with actual URL
+                'link5': 'https://www.example5.com'  // Replace with actual URL
             };
 
-            const fileURL = githubBaseURL + files[file];
-
-            // Redirect to the file URL
-            window.location.href = fileURL;
+            // Redirect to the specified link
+            window.location.href = links[link];
         }
     </script>
 
