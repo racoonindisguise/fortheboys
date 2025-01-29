@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Files</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Download Files from GitHub</h1>
+
+    <!-- Buttons that trigger file downloads -->
+    <button onclick="downloadFile('file1')">Download File 1</button>
+    <button onclick="downloadFile('file2')">Download File 2</button>
+    <button onclick="downloadFile('file3')">Download File 3</button>
+    <button onclick="downloadFile('file4')">Download File 4</button>
+    <button onclick="downloadFile('file5')">Download File 5</button>
+
+    <script>
+        function downloadFile(file) {
+            // GitHub raw file URL pattern
+            const githubBaseURL = 'https://raw.githubusercontent.com/your-username/your-repository/main/';
+
+            // Replace these filenames with your actual file names in the repo
+            const files = {
+                'file1': 'path/to/your/file1.ext',
+                'file2': 'path/to/your/file2.ext',
+                'file3': 'path/to/your/file3.ext',
+                'file4': 'path/to/your/file4.ext',
+                'file5': 'path/to/your/file5.ext'
+            };
+
+            const fileURL = githubBaseURL + files[file];
+
+            // Create an anchor element and trigger the download
+            const a = document.createElement('a');
+            a.href = fileURL;
+            a.download = files[file].split('/').pop();  // Use the file name for the download
+            a.click();
+        }
+    </script>
+
+</body>
+</html>
