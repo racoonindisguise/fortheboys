@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download Files</title>
+    <title>Visit GitHub Files</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -30,19 +30,19 @@
 </head>
 <body>
 
-    <h1>Download Files from GitHub</h1>
+    <h1>Visit GitHub Files</h1>
 
-    <!-- Buttons that trigger file downloads -->
-    <button onclick="downloadFile('file1')">Download File 1</button>
-    <button onclick="downloadFile('file2')">Download File 2</button>
-    <button onclick="downloadFile('file3')">Download File 3</button>
-    <button onclick="downloadFile('file4')">Download File 4</button>
-    <button onclick="downloadFile('file5')">Download File 5</button>
+    <!-- Buttons that redirect to GitHub file links -->
+    <button onclick="goToLink('file1')">Go to File 1</button>
+    <button onclick="goToLink('file2')">Go to File 2</button>
+    <button onclick="goToLink('file3')">Go to File 3</button>
+    <button onclick="goToLink('file4')">Go to File 4</button>
+    <button onclick="goToLink('file5')">Go to File 5</button>
 
     <script>
-        function downloadFile(file) {
+        function goToLink(file) {
             // GitHub raw file URL pattern
-            const githubBaseURL = 'https://raw.githubusercontent.com/your-username/your-repository/main/';
+            const githubBaseURL = 'https://github.com/your-username/your-repository/blob/main/';
 
             // Replace these filenames with your actual file names in the repo
             const files = {
@@ -55,11 +55,8 @@
 
             const fileURL = githubBaseURL + files[file];
 
-            // Create an anchor element and trigger the download
-            const a = document.createElement('a');
-            a.href = fileURL;
-            a.download = files[file].split('/').pop();  // Use the file name for the download
-            a.click();
+            // Redirect to the file URL
+            window.location.href = fileURL;
         }
     </script>
 
